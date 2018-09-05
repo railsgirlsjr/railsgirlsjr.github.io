@@ -1,0 +1,37 @@
+<!-- Footer section -->
+{% unless page.permalink == '/' and site.data.curtana.clean_homepage %}
+  <footer class="footer">
+    <ul>
+      <li><a href="{{ '/' | relative_url }}">Rails Girls Jr</a></li>
+        <li><a href="mailto:contact@railsgirlsjr.com">Contact Us Email</a></li>
+        <li><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></li>
+    </ul>
+  </footer>
+{% endunless %}
+
+<!-- Theme scripts -->
+<script src="{{ '/js/app.js?assets-inline' | prepend: amsf_theme_assets }}"></script>
+
+<!-- User scripts -->
+<script src="{{ '/js/user.js?assets-inline' | prepend: amsf_user_assets }}"></script>
+
+<!-- Lightense Images -->
+{% if page.plugin == 'lightense' %}
+  <script src="{{ '/js/lightense.min.js?assets-inline' | prepend: amsf_theme_assets }}"></script>
+  <script>
+    window.addEventListener('load', function () {
+      Lightense('p > img:not(.no-lightense),.lightense');
+    }, false);
+  </script>
+{% endif %}
+
+<!-- Service Worker  -->
+{{ amsf_service_worker }}
+
+<!-- Google Analytics -->
+{{ amsf_google_analytics }}
+
+<!-- Foot hooks -->
+{% if page.foot %}
+  {{ page.foot }}
+{% endif %}

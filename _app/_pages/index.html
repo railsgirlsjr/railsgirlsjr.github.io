@@ -1,0 +1,23 @@
+---
+layout: default
+title: Home
+permalink: /
+desc:
+---
+
+<!-- Article wrapper, limit width -->
+<article>
+
+  <!-- Post title -->
+  <header>
+    <font color="#fff">
+    <h1>
+      Rails Girls Jr
+    </h1>
+    <small>Welcome・你好・こんにちは・Kia Ora</small>
+    {% for post in site.categories.event limit:1 %}
+        <p>Our newest event located in <a id="white" href="{{ post.url | relative_url }}" class=latest>{{ post.title }}</a></p>
+      {% endfor %}
+      </font>
+  </header>
+</article>

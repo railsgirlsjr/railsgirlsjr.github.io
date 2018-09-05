@@ -1,0 +1,10 @@
+---
+layout: page
+title: Event
+permalink: /event/
+desc: Event・活动・イベント
+---
+
+{% for post in site.categories.event %}
+  {% include themes/{{ site.amsf_theme }}/includes/page-item.html %}
+{% endfor %}
