@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Rails Girls Jr</title>
+  <subtitle>I make things that don’t suck.</subtitle>
+  <updated>2018-09-05T20:36:59+12:00</updated>
+  <id>http://0.0.0.0:4321/</id>
+  <generator uri="https://sparanoid.com/lab/amsf/" version="24.3.0">Almace Scaffolding</generator>
+
+  <link rel="alternate" type="text/html" hreflang="en" href="http://0.0.0.0:4321/" />
+  <link rel="self" type="application/atom+xml" href="http://0.0.0.0:4321/feed.xml" />
+
+  <author>
+    <name>Rails Girls Jr Team</name>
+    <uri>http://0.0.0.0:4321/</uri>
+    <email>contact@railsgirlsjr.com</email>
+  </author>
+
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Auckland NZ 🇳🇿</title>
+        <id>http://0.0.0.0:4321/event/auckland/</id>
+        <link rel="alternate" type="text/html" href="http://0.0.0.0:4321/event/auckland/" />
+        <published>2018-09-04T00:00:00+12:00</published>
+
+        
+          <updated>2018-09-04T00:00:00+12:00</updated>
+        
+
+        <author>
+          <name>Rails Girls Jr Team</name>
+          <uri>https://railsgirlsjr.com/</uri>
+          <email>contact@railsgirlsjr.com</email>
+        </author>
+
+        <content type="html" xml:base="http://0.0.0.0:4321/">
+          
+            &lt;p&gt;As we know Amazon CloudFront doesn’t support HSTS (HTTP Strict Transport Security) headers. If you tried adding it via CLI or web console, it will be prefixed with &lt;code class=&quot;highlighter-rouge&quot;&gt;x-amz-&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;But today we’re now able to use AWS &lt;a href=&quot;http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-at-the-edge.html&quot;&gt;Lambda@Edge&lt;/a&gt; to execute functions that customize the content that is delivered through CloudFront.&lt;/p&gt;
+
+&lt;p&gt;You can access AWS Lambda via its web console, then create (author) a function from scratch, create a new role from template Basic Edge Lambda permissions, then use the following code:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s1&quot;&gt;'use strict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Records&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'strict-transport-security'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Strict-Transport-Security'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;   
+    &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'max-age=31536000; includeSubdomains; preload'&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The above code snippet is straightforward: simply add the &lt;code class=&quot;highlighter-rouge&quot;&gt;Strict-Transport-Security&lt;/code&gt; we need and return the modified header to edge nodes. Then you can publish a new version, create a CloudFront trigger using Distribution ID for the distribution you want to apply this header. Make sure to select &lt;code class=&quot;highlighter-rouge&quot;&gt;Origin Response&lt;/code&gt; for your Lambda function to listen for.&lt;/p&gt;
+
+&lt;p&gt;Once this is submitted new headers will take effect as expected:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-I&lt;/span&gt; https://sparanoid.com/
+HTTP/1.1 200 OK
+Content-Type: text/html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8
+Content-Length: 6816
+Connection: keep-alive
+Strict-Transport-Security: max-age&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;31536000&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; includeSubdomains&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; preload
+Age: 9128
+Cache-Control: public, max-age&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1800, immutable
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Updated Mar 21, 2018: Now Amazon Web Services has an official documentation for this feature: &lt;a href=&quot;https://aws.amazon.com/blogs/networking-and-content-delivery/adding-http-security-headers-using-lambdaedge-and-amazon-cloudfront/&quot;&gt;Adding HTTP Security Headers Using Lambda@Edge and Amazon CloudFront
+&lt;/a&gt;.&lt;/p&gt;
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>As we know Amazon CloudFront doesn’t support HSTS (HTTP Strict Transport Security) headers. If you tried adding it via CLI or web console, it will be prefixed with x-amz-.</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>HSTS for Amazon CloudFront</title>
+        <id>http://0.0.0.0:4321/note/cloudfront-hsts/</id>
+        <link rel="alternate" type="text/html" href="http://0.0.0.0:4321/note/cloudfront-hsts/" />
+        <published>2017-11-13T00:00:00+13:00</published>
+
+        
+          <updated>2017-11-13T00:00:00+13:00</updated>
+        
+
+        <author>
+          <name>Rails Girls Jr Team</name>
+          <uri>https://railsgirlsjr.com/</uri>
+          <email>contact@railsgirlsjr.com</email>
+        </author>
+
+        <content type="html" xml:base="http://0.0.0.0:4321/">
+          
+            &lt;p&gt;As we know Amazon CloudFront doesn’t support HSTS (HTTP Strict Transport Security) headers. If you tried adding it via CLI or web console, it will be prefixed with &lt;code class=&quot;highlighter-rouge&quot;&gt;x-amz-&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;But today we’re now able to use AWS &lt;a href=&quot;http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-at-the-edge.html&quot;&gt;Lambda@Edge&lt;/a&gt; to execute functions that customize the content that is delivered through CloudFront.&lt;/p&gt;
+
+&lt;p&gt;You can access AWS Lambda via its web console, then create (author) a function from scratch, create a new role from template Basic Edge Lambda permissions, then use the following code:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s1&quot;&gt;'use strict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Records&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'strict-transport-security'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Strict-Transport-Security'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;   
+    &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'max-age=31536000; includeSubdomains; preload'&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The above code snippet is straightforward: simply add the &lt;code class=&quot;highlighter-rouge&quot;&gt;Strict-Transport-Security&lt;/code&gt; we need and return the modified header to edge nodes. Then you can publish a new version, create a CloudFront trigger using Distribution ID for the distribution you want to apply this header. Make sure to select &lt;code class=&quot;highlighter-rouge&quot;&gt;Origin Response&lt;/code&gt; for your Lambda function to listen for.&lt;/p&gt;
+
+&lt;p&gt;Once this is submitted new headers will take effect as expected:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-I&lt;/span&gt; https://sparanoid.com/
+HTTP/1.1 200 OK
+Content-Type: text/html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8
+Content-Length: 6816
+Connection: keep-alive
+Strict-Transport-Security: max-age&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;31536000&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; includeSubdomains&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; preload
+Age: 9128
+Cache-Control: public, max-age&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1800, immutable
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Updated Mar 21, 2018: Now Amazon Web Services has an official documentation for this feature: &lt;a href=&quot;https://aws.amazon.com/blogs/networking-and-content-delivery/adding-http-security-headers-using-lambdaedge-and-amazon-cloudfront/&quot;&gt;Adding HTTP Security Headers Using Lambda@Edge and Amazon CloudFront
+&lt;/a&gt;.&lt;/p&gt;
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>As we know Amazon CloudFront doesn’t support HSTS (HTTP Strict Transport Security) headers. If you tried adding it via CLI or web console, it will be prefixed with x-amz-.</summary>
+        
+      </entry>
+    
+  
+    
+  
+    
+  
+</feed>
