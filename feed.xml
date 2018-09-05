@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Rails Girls Jr</title>
+  <subtitle>I make things that don’t suck.</subtitle>
+  <updated>2018-09-05T21:27:45+12:00</updated>
+  <id>http://0.0.0.0:4321/</id>
+  <generator uri="https://sparanoid.com/lab/amsf/" version="24.3.0">Almace Scaffolding</generator>
+
+  <link rel="alternate" type="text/html" hreflang="en" href="http://0.0.0.0:4321/" />
+  <link rel="self" type="application/atom+xml" href="http://0.0.0.0:4321/feed.xml" />
+
+  <author>
+    <name>Rails Girls Jr Team</name>
+    <uri>http://0.0.0.0:4321/</uri>
+    <email>contact@railsgirlsjr.com</email>
+  </author>
+
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Auckland NZ 🇳🇿</title>
+        <id>http://0.0.0.0:4321/event/auckland/</id>
+        <link rel="alternate" type="text/html" href="http://0.0.0.0:4321/event/auckland/" />
+        <published>2018-09-04T00:00:00+12:00</published>
+
+        
+          <updated>2018-09-04T00:00:00+12:00</updated>
+        
+
+        <author>
+          <name>Rails Girls Jr Team</name>
+          <uri>https://railsgirlsjr.com/</uri>
+          <email>contact@railsgirlsjr.com</email>
+        </author>
+
+        <content type="html" xml:base="http://0.0.0.0:4321/">
+          
+            &lt;h1 id=&quot;auckland-new-zealand-&quot;&gt;Auckland New Zealand 🇳🇿&lt;/h1&gt;
+
+&lt;p&gt;Kia Ora&lt;/p&gt;
+
+&lt;p&gt;The person in charge of this event is &lt;a href=&quot;https://twitter.com/tuzi_moe&quot;&gt;@tuzimoe&lt;/a&gt; / &lt;a href=&quot;mailto:tuzi@railsgirlsjr.com&quot;&gt;Personal Email&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You may notice that Auckland is the birthplace of Rails Girls Jr and we will host two events in Auckland.&lt;/p&gt;
+
+&lt;p&gt;There will be two events available to attend. English🇳🇿 and Mandarin🇨🇳.&lt;/p&gt;
+
+&lt;p&gt;If you can volunteer, please send an email to tuzi@railsgirlsjr.com.&lt;/p&gt;
+
+&lt;p&gt;Stay tuned.&lt;/p&gt;
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>Auckland New Zealand 🇳🇿</summary>
+        
+      </entry>
+    
+  
+</feed>

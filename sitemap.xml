@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://0.0.0.0:4321/</loc>
+    <lastmod>2018-09-05</lastmod>
+  </url>
+
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/about/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/donate/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/email-signup/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/email/subscribed/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/email/unsubscribed/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/email/verify/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/error/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/event/</loc>
+        
+      </url>
+    
+  
+    
+  
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/joinus/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/joinussc/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/joinustc/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/store/</loc>
+        
+      </url>
+    
+  
+
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/event/auckland/</loc>
+        
+          <lastmod>2018-09-04</lastmod>
+        
+      </url>
+    
+  
+
+</urlset>
