@@ -180,7 +180,7 @@ del {
   color: var(--link-color); }
 
 body:hover .latest {
-  color var(--link-color) !important; }
+  color: var(--link-color) !important; }
 
 .content {
   margin-bottom: 16vmin; }
@@ -333,6 +333,8 @@ body:hover .latest {
   .content .browser {
     --space-deco: var(--space-md);
     display: block;
+    width: calc(100% + var(--space-deco) * 2);
+    margin-left: calc(var(--space-deco) * -1);
     margin-right: calc(var(--space-deco) * -1);
     margin-bottom: 1.8rem; }
     @media (max-width: 1080px) {
