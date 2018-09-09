@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /lab/version/
-
-
-Sitemap: http://0.0.0.0:4321/sitemap.xml
